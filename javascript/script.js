@@ -1,15 +1,18 @@
+// CRAFTORA Homepage JavaScript
 
-const menuBtn = document.querySelector("#menuBtn");
-const navLinks = document.querySelector("#navLinks");
-const navButtons = document.querySelector(".nav-buttons");
+// 1. Display a welcome message in the console
+console.log("Welcome to CRAFTORA!");
 
-menuBtn.addEventListener("click", function () {
+// 2. Select all navigation links
+const navLinks = document.querySelectorAll(".nav-links a");
 
-    navLinks.classList.toggle("active");
-    navButtons.classList.toggle("active");
+// 3. Add click functionality to navigation links
+navLinks.forEach(function(link) {
 
-    const isOpen = navLinks.classList.contains("active");
+    link.addEventListener("click", function() {
 
-    menuBtn.setAttribute("aria-expanded", isOpen);
+        console.log("You clicked: " + link.textContent);
+
+    });
 
 });
