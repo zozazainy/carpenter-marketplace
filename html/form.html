@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Furniture Project - CRAFTORA</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+
+    <main class="form-container">
+
+        <h1>Create Your Furniture Project</h1>
+        <p>Describe your furniture requirements and receive quotations from carpenters.</p>
+
+        <form id="projectForm">
+
+            <!-- 1. Furniture Category -->
+            <fieldset>
+                <legend>1. Furniture Category</legend>
+
+                <label for="category">Select Furniture</label>
+                <select id="category" name="category" required>
+                    <option value="">Choose a category</option>
+                    <option value="Wardrobe">Wardrobe</option>
+                    <option value="Kitchen Cabinet">Kitchen Cabinet</option>
+                    <option value="Study Table">Study Table</option>
+                    <option value="TV Unit">TV Unit</option>
+                    <option value="Bed">Bed</option>
+                    <option value="Bookshelf">Bookshelf</option>
+                    <option value="Other">Other</option>
+                </select>
+            </fieldset>
+
+            <!-- 2. Dimensions -->
+            <fieldset>
+                <legend>2. Furniture Dimensions</legend>
+
+                <label for="length">Length</label>
+                <input type="number" id="length" name="length"
+                       min="0.1" step="any" required>
+
+                <label for="height">Height</label>
+                <input type="number" id="height" name="height"
+                       min="0.1" step="any" required>
+
+                <label for="depth">Depth</label>
+                <input type="number" id="depth" name="depth"
+                       min="0.1" step="any" required>
+
+                <label for="unit">Measurement Unit</label>
+                <select id="unit" name="unit" required>
+                    <option value="feet">Feet</option>
+                    <option value="inches">Inches</option>
+                    <option value="cm">Centimeters</option>
+                </select>
+            </fieldset>
+
+            <!-- 3. Material and Finishing -->
+            <fieldset>
+                <legend>3. Material and Finishing</legend>
+
+                <label for="material">Select Material</label>
+                <select id="material" name="material" required>
+                    <option value="">Choose Material</option>
+                    <option value="MDF">MDF</option>
+                    <option value="Plywood">Plywood</option>
+                    <option value="Solid Wood">Solid Wood</option>
+                    <option value="Chipboard">Chipboard</option>
+                </select>
+
+                <label for="finishing">Select Finishing</label>
+                <select id="finishing" name="finishing" required>
+                    <option value="">Choose Finishing</option>
+                    <option value="Matte">Matte</option>
+                    <option value="Glossy">Glossy</option>
+                    <option value="Laminate">Laminate</option>
+                    <option value="Polish">Polish</option>
+                </select>
+            </fieldset>
+
+            <!-- 4. Additional Requirements -->
+            <fieldset>
+                <legend>4. Additional Requirements</legend>
+
+                <label for="requirements">
+                    Describe your furniture requirements
+                </label>
+
+                <textarea id="requirements" name="requirements"
+                    rows="5"
+                    placeholder="Number of doors, drawers, shelves, color, design, etc."
+                    required></textarea>
+            </fieldset>
+
+            <!-- 5. Image Upload -->
+            <fieldset>
+                <legend>5. Upload Reference Images</legend>
+
+                <label for="images">Choose Furniture Images</label>
+
+                <input type="file" id="images" name="images"
+                       accept="image/*" multiple>
+
+                <div id="imagePreview"></div>
+            </fieldset>
+
+            <!-- 6. Submit -->
+            <button type="submit">Submit Project</button>
+
+            <p id="message"></p>
+
+        </form>
+
+    </main>
+
+    <script src="form.js"></script>
+
+</body>
+</html>
