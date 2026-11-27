@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CRAFTORA | Carpenter Dashboard</title>
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo">
+            <a href="../index.html">
+                CRAFT<span>ORA</span>
+                <small>Your Style, Our Commitment</small>
+            </a>
+        </div>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="form.html">Post a Project</a>
+            <a href="quotation.html">Quotations</a>
+        </nav>
+
+        <div class="profile">
+            <span>Carpenter Dashboard</span>
+        </div>
+
+    </header>
+
+    <!-- DASHBOARD INTRO -->
+    <section class="dashboard-intro">
+
+        <h1>Carpenter Dashboard</h1>
+
+        <p>
+            Explore available furniture projects, review customer
+            requirements, and submit your quotations.
+        </p>
+
+    </section>
+
+    <!-- PROJECT SUMMARY -->
+    <section class="summary">
+
+        <div class="summary-card">
+            <h3 id="totalProjects">5</h3>
+            <p>Available Projects</p>
+        </div>
+
+        <div class="summary-card">
+            <h3>0</h3>
+            <p>Submitted Quotations</p>
+        </div>
+
+        <div class="summary-card">
+            <h3>0</h3>
+            <p>Selected Projects</p>
+        </div>
+
+    </section>
+
+    <!-- AVAILABLE PROJECTS -->
+    <section class="projects-section">
+
+        <h2>Available Customer Projects</h2>
+
+        <p class="section-description">
+            Browse furniture requests submitted by customers.
+        </p>
+
+        <!-- SEARCH AND FILTERS -->
+        <div class="filters">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search projects..."
+            >
+
+            <select id="categoryFilter">
+                <option value="">All Categories</option>
+                <option value="Wardrobe">Wardrobe</option>
+                <option value="Bed">Bed</option>
+                <option value="Door">Door</option>
+                <option value="Study Table">Study Table</option>
+                <option value="Kitchen Cabinet">Kitchen Cabinet</option>
+            </select>
+
+            <select id="locationFilter">
+                <option value="">All Locations</option>
+                <option value="Timergara">Timergara</option>
+                <option value="Chakdara">Chakdara</option>
+                <option value="Batkhela">Batkhela</option>
+                <option value="Mingora">Mingora</option>
+            </select>
+
+            <select id="materialFilter">
+                <option value="">All Materials</option>
+                <option value="Solid Wood">Solid Wood</option>
+                <option value="Plywood">Plywood</option>
+                <option value="MDF">MDF</option>
+                <option value="Particle Board">Particle Board</option>
+            </select>
+
+        </div>
+
+        <!-- PROJECT CARDS -->
+        <div class="project-grid" id="projectGrid">
+
+            <!-- PROJECT 1 -->
+            <div class="project-card"
+                data-category="Wardrobe"
+                data-location="Timergara"
+                data-material="Solid Wood">
+
+                <span class="project-tag">Wardrobe</span>
+
+                <h3>Custom Wooden Wardrobe</h3>
+
+                <p>
+                    A customer needs a custom-designed wardrobe
+                    for a bedroom.
+                </p>
+
+                <div class="project-details">
+                    <p><strong>Dimensions:</strong> 6 × 3 × 2 ft</p>
+                    <p><strong>Material:</strong> Solid Wood</p>
+                    <p><strong>Finishing:</strong> Polish</p>
+                    <p><strong>Location:</strong> Timergara</p>
+                    <p><strong>Budget:</strong> PKR 50,000</p>
+                </div>
+
+                <button class="quote-btn">Submit Quotation</button>
+
+            </div>
+
+            <!-- PROJECT 2 -->
+            <div class="project-card"
+                data-category="Bed"
+                data-location="Chakdara"
+                data-material="Plywood">
+
+                <span class="project-tag">Bed</span>
+
+                <h3>Modern Double Bed</h3>
+
+                <p>
+                    A customer is looking for a modern double bed
+                    with a simple design.
+                </p>
+
+                <div class="project-details">
+                    <p><strong>Dimensions:</strong> 6.5 × 6 ft</p>
+                    <p><strong>Material:</strong> Plywood</p>
+                    <p><strong>Finishing:</strong> Natural Wood Finish</p>
+                    <p><strong>Location:</strong> Chakdara</p>
+                    <p><strong>Budget:</strong> PKR 65,000</p>
+                </div>
+
+                <button class="quote-btn">Submit Quotation</button>
+
+            </div>
+
+            <!-- PROJECT 3 -->
+            <div class="project-card"
+                data-category="Study Table"
+                data-location="Batkhela"
+                data-material="MDF">
+
+                <span class="project-tag">Study Table</span>
+
+                <h3>Custom Study Table</h3>
+
+                <p>
+                    A customer requires a study table with drawers
+                    and storage space.
+                </p>
+
+                <div class="project-details">
+                    <p><strong>Dimensions:</strong> 4 × 2 × 2.5 ft</p>
+                    <p><strong>Material:</strong> MDF</p>
+                    <p><strong>Finishing:</strong> Laminate Finish</p>
+                    <p><strong>Location:</strong> Batkhela</p>
+                    <p><strong>Budget:</strong> PKR 25,000</p>
+                </div>
+
+                <button class="quote-btn">Submit Quotation</button>
+
+            </div>
+
+            <!-- PROJECT 4 -->
+            <div class="project-card"
+                data-category="Door"
+                data-location="Mingora"
+                data-material="Solid Wood">
+
+                <span class="project-tag">Door</span>
+
+                <h3>Wooden Main Door</h3>
+
+                <p>
+                    A customer needs a strong and attractive
+                    wooden entrance door.
+                </p>
+
+                <div class="project-details">
+                    <p><strong>Dimensions:</strong> 7 × 3.5 ft</p>
+                    <p><strong>Material:</strong> Solid Wood</p>
+                    <p><strong>Finishing:</strong> Polish</p>
+                    <p><strong>Location:</strong> Mingora</p>
+                    <p><strong>Budget:</strong> PKR 40,000</p>
+                </div>
+
+                <button class="quote-btn">Submit Quotation</button>
+
+            </div>
+
+            <!-- PROJECT 5 -->
+            <div class="project-card"
+                data-category="Kitchen Cabinet"
+                data-location="Timergara"
+                data-material="Particle Board">
+
+                <span class="project-tag">Kitchen Cabinet</span>
+
+                <h3>Modern Kitchen Cabinets</h3>
+
+                <p>
+                    A customer requires custom kitchen cabinets
+                    with multiple storage sections.
+                </p>
+
+                <div class="project-details">
+                    <p><strong>Dimensions:</strong> 8 × 2 × 7 ft</p>
+                    <p><strong>Material:</strong> Particle Board</p>
+                    <p><strong>Finishing:</strong> Laminate Finish</p>
+                    <p><strong>Location:</strong> Timergara</p>
+                    <p><strong>Budget:</strong> PKR 80,000</p>
+                </div>
+
+                <button class="quote-btn">Submit Quotation</button>
+
+            </div>
+
+        </div>
+
+        <p id="noProjects" class="no-projects">
+            No projects found.
+        </p>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <h2>CRAFTORA</h2>
+        <p>Your Style, Our Commitment.</p>
+        <p>&copy; 2026 CRAFTORA. All Rights Reserved.</p>
+    </footer>
+
+    <script src="../javascript/dashboard.js" defer></script>
+
+</body>
+</html>
