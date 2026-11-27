@@ -1,133 +1,175 @@
 
-// ===================================
-// 1. SELECT HTML ELEMENTS
-// ===================================
-
-const projectForm = document.querySelector("#projectForm");
-const imagesInput = document.querySelector("#images");
-const imagePreview = document.querySelector("#imagePreview");
-const message = document.querySelector("#message");
+// CRAFTORA - Customer Project Form JavaScript
 
 
-// ===================================
-// 2. IMAGE UPLOAD AND PREVIEW
-// ===================================
+// 1. SELECT FORM ELEMENTS
 
-let selectedFiles = [];
+const projectForm = document.getElementById("projectForm");
 
-imagesInput.addEventListener("change", function () {
+const category = document.getElementById("category");
 
-    const newFiles = Array.from(imagesInput.files);
+const customCategory = document.getElementById("customCategory");
 
-    // Check maximum 5 images
-    if (selectedFiles.length + newFiles.length > 5) {
-        alert("You can upload a maximum of 5 images.");
-        imagesInput.value = "";
-        return;
+const referenceImage = document.getElementById("referenceImage");
+
+
+// 2. HANDLE OTHER FURNITURE CATEGORY
+
+category.addEventListener("change", function() {
+
+    if (category.value === "Other") {
+
+        customCategory.required = true;
+        customCategory.placeholder = "Please specify furniture type";
+
+    } else {
+
+        customCategory.required = false;
+        customCategory.value = "";
+        customCategory.placeholder = "Enter another furniture type";
+
     }
 
-    // Check image type and file size
-    for (const file of newFiles) {
+});
+
+
+// 3. PREVIEW REFERENCE IMAGE
+
+referenceImage.addEventListener("change", function() {
+
+    const file = referenceImage.files[0];
+
+    if (file) {
 
         if (!file.type.startsWith("image/")) {
-            alert("Please select image files only.");
-            imagesInput.value = "";
+
+            alert("Please select a valid image file.");
+
+            referenceImage.value = "";
+
             return;
+
         }
 
-        // Maximum 5 MB per image
-        if (file.size > 5 * 1024 * 1024) {
-            alert("Each image must be smaller than 5 MB.");
-            imagesInput.value = "";
-            return;
+        const imageURL = URL.createObjectURL(file);
+
+        const imagePreview = document.createElement("img");
+
+        imagePreview.src = imageURL;
+        imagePreview.alt = "Furniture Reference Image";
+
+        imagePreview.style.width = "200px";
+        imagePreview.style.marginTop = "10px";
+        imagePreview.style.borderRadius = "8px";
+
+        // Remove previous preview
+
+        const oldPreview = document.getElementById("imagePreview");
+
+        if (oldPreview) {
+
+            oldPreview.remove();
+
         }
+
+        imagePreview.id = "imagePreview";
+
+        referenceImage.parentElement.appendChild(imagePreview);
+
     }
-
-    // Add selected images
-    selectedFiles.push(...newFiles);
-
-    displayImages();
-
-    // Allow selecting the same file again
-    imagesInput.value = "";
 
 });
 
 
-// ===================================
-// 3. DISPLAY IMAGE PREVIEWS
-// ===================================
+// 4. HANDLE FORM SUBMISSION
 
-function displayImages() {
+projectForm.addEventListener("submit", function(event) {
 
-    imagePreview.innerHTML = "";
+    // Prevent page reload
 
-    selectedFiles.forEach(function (file, index) {
-
-        // Create image container
-        const imageContainer = document.createElement("div");
-        imageContainer.classList.add("preview-item");
-
-        // Create image
-        const image = document.createElement("img");
-
-        image.src = URL.createObjectURL(file);
-        image.alt = "Furniture reference image";
-
-        // Create remove button
-        const removeButton = document.createElement("button");
-
-        removeButton.type = "button";
-        removeButton.textContent = "×";
-        removeButton.classList.add("remove-image");
-
-        // Remove selected image
-        removeButton.addEventListener("click", function () {
-
-            selectedFiles.splice(index, 1);
-
-            displayImages();
-
-        });
-
-        // Add elements
-        imageContainer.appendChild(image);
-        imageContainer.appendChild(removeButton);
-
-        imagePreview.appendChild(imageContainer);
-
-    });
-
-}
-
-
-// ===================================
-// 4. FORM VALIDATION
-// ===================================
-
-projectForm.addEventListener("submit", function (event) {
-
-    // Prevent page refresh
     event.preventDefault();
 
-    // Check required fields
-    if (!projectForm.checkValidity()) {
 
-        projectForm.reportValidity();
+    // Get form values
+
+    const name = document.getElementById("customerName").value.trim();
+
+    const phone = document.getElementById("phone").value.trim();
+
+    const location = document.getElementById("location").value.trim();
+
+    const furnitureCategory = category.value === "Other"
+        ? customCategory.value.trim()
+        : category.value;
+
+    const length = Number(document.getElementById("length").value);
+
+    const width = Number(document.getElementById("width").value);
+
+    const height = Number(document.getElementById("height").value);
+
+
+    // Validate dimensions
+
+    if (length <= 0 || width <= 0 || height <= 0) {
+
+        alert("Please enter valid furniture dimensions.");
 
         return;
 
     }
 
-    // Display success message
-    message.textContent =
-        "Your project details are valid!";
 
-    message.style.color = "green";
+    // Display submission confirmation
 
-    // Display uploaded image count
-    console.log("Selected images:", selectedFiles);
+    alert(
+        "Your project has been submitted successfully!\n\n" +
 
-    console.log("Project form is valid.");
+        "Customer Name: " + name + "\n" +
+
+        "Phone: " + phone + "\n" +
+
+        "Location: " + location + "\n" +
+
+        "Furniture Category: " + furnitureCategory + "\n" +
+
+        "Dimensions: " + length + " × " + width + " × " + height
+
+    );
+
+
+    // Reset form after submission
+
+    projectForm.reset();
+
+    customCategory.required = false;
+
+    const imagePreview = document.getElementById("imagePreview");
+
+    if (imagePreview) {
+
+        imagePreview.remove();
+
+    }
 
 });
+
+
+// 5. HANDLE FORM RESET
+
+projectForm.addEventListener("reset", function() {
+
+    customCategory.required = false;
+
+    const imagePreview = document.getElementById("imagePreview");
+
+    if (imagePreview) {
+
+        imagePreview.remove();
+
+    }
+
+});
+
+
+console.log("CRAFTORA Form JavaScript Loaded Successfully!");
