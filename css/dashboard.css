@@ -1,0 +1,302 @@
+
+/* GENERAL STYLING */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F7F6F1;
+    color: #172D27;
+    line-height: 1.6;
+}
+
+
+/* HEADER */
+
+.header {
+    background-color: #172D27;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #D69B62;
+}
+
+.logo small {
+    display: block;
+    font-size: 11px;
+    font-weight: normal;
+    color: #E8F0EB;
+}
+
+.header nav {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.header nav a:hover {
+    color: #D69B62;
+}
+
+.profile {
+    color: #E8F0EB;
+    font-size: 14px;
+}
+
+
+/* DASHBOARD INTRO */
+
+.dashboard-intro {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #E8F0EB;
+}
+
+.dashboard-intro h1 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.dashboard-intro p {
+    color: #555;
+}
+
+
+/* SUMMARY CARDS */
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 35px 7%;
+}
+
+.summary-card {
+    background-color: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.summary-card h3 {
+    font-size: 30px;
+    color: #24734E;
+}
+
+.summary-card p {
+    color: #666;
+}
+
+
+/* PROJECT SECTION */
+
+.projects-section {
+    padding: 35px 7% 60px;
+}
+
+.projects-section h2 {
+    font-size: 27px;
+    margin-bottom: 5px;
+}
+
+.section-description {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+
+/* SEARCH AND FILTERS */
+
+.filters {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.filters input,
+.filters select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: white;
+}
+
+.filters input:focus,
+.filters select:focus {
+    outline: none;
+    border-color: #24734E;
+}
+
+
+/* PROJECT GRID */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    background-color: white;
+    padding: 22px;
+    border-radius: 10px;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.project-tag {
+    display: inline-block;
+    background-color: #E8F0EB;
+    color: #24734E;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.project-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.project-card > p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.project-details {
+    border-top: 1px solid #eee;
+    padding-top: 12px;
+    margin-bottom: 18px;
+}
+
+.project-details p {
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+
+/* QUOTATION BUTTON */
+
+.quote-btn {
+    width: 100%;
+    background-color: #24734E;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.quote-btn:hover {
+    background-color: #172D27;
+}
+
+
+/* NO PROJECT MESSAGE */
+
+.no-projects {
+    display: none;
+    text-align: center;
+    padding: 30px;
+    color: #777;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: #172D27;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+footer h2 {
+    margin-bottom: 8px;
+}
+
+footer p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filters {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header nav {
+        justify-content: center;
+    }
+
+    .summary {
+        grid-template-columns: 1fr;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-intro h1 {
+        font-size: 27px;
+    }
+
+}
