@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Post a Project | CRAFTORA</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <a href="../index.html" class="logo">
+            CRAFT<span>ORA</span>
+            <small>Your Style, Our Commitment</small>
+        </a>
+
+        <a href="../index.html" class="back-btn">Back to Home</a>
+
+    </header>
+
+    <!-- MAIN FORM SECTION -->
+    <main class="form-container">
+
+        <div class="form-heading">
+            <h1>Submit Your Furniture Project</h1>
+
+            <p>
+                Share your furniture requirements with us.
+                Skilled carpenters will review your project
+                and provide quotations.
+            </p>
+        </div>
+
+        <!-- CUSTOMER PROJECT FORM -->
+        <form id="projectForm">
+
+            <!-- CUSTOMER INFORMATION -->
+            <fieldset>
+
+                <legend>Customer Information</legend>
+
+                <div class="form-group">
+                    <label for="customerName">Full Name</label>
+                    <input
+                        type="text"
+                        id="customerName"
+                        name="customerName"
+                        placeholder="Enter your full name"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter your phone number"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email address">
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Project Location</label>
+                    <input
+                        type="text"
+                        id="location"
+                        name="location"
+                        placeholder="Enter your city or area"
+                        required>
+                </div>
+
+            </fieldset>
+
+            <!-- FURNITURE DETAILS -->
+            <fieldset>
+
+                <legend>Furniture Details</legend>
+
+                <div class="form-group">
+                    <label for="category">Furniture Category</label>
+
+                    <select id="category" name="category" required>
+                        <option value="">Select Furniture Category</option>
+                        <option value="Wardrobe">Wardrobe</option>
+                        <option value="Bed">Bed</option>
+                        <option value="Door">Door</option>
+                        <option value="Kitchen Cabinet">Kitchen Cabinet</option>
+                        <option value="Study Table">Study Table</option>
+                        <option value="Office Furniture">Office Furniture</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="customCategory">Other Category (Optional)</label>
+                    <input
+                        type="text"
+                        id="customCategory"
+                        name="customCategory"
+                        placeholder="Enter another furniture type">
+                </div>
+
+                <div class="dimensions">
+
+                    <div class="form-group">
+                        <label for="length">Length</label>
+                        <input
+                            type="number"
+                            id="length"
+                            name="length"
+                            placeholder="Length"
+                            min="0"
+                            step="any"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="width">Width</label>
+                        <input
+                            type="number"
+                            id="width"
+                            name="width"
+                            placeholder="Width"
+                            min="0"
+                            step="any"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="height">Height</label>
+                        <input
+                            type="number"
+                            id="height"
+                            name="height"
+                            placeholder="Height"
+                            min="0"
+                            step="any"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="unit">Measurement Unit</label>
+
+                        <select id="unit" name="unit" required>
+                            <option value="inches">Inches</option>
+                            <option value="feet">Feet</option>
+                            <option value="cm">Centimeters</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="material">Preferred Material</label>
+
+                    <select id="material" name="material" required>
+                        <option value="">Select Material</option>
+                        <option value="Solid Wood">Solid Wood</option>
+                        <option value="Plywood">Plywood</option>
+                        <option value="MDF">MDF</option>
+                        <option value="Particle Board">Particle Board</option>
+                        <option value="Laminate">Laminate</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="finishing">Finishing Requirements</label>
+
+                    <select id="finishing" name="finishing" required>
+                        <option value="">Select Finishing</option>
+                        <option value="Polish">Polish</option>
+                        <option value="Paint">Paint</option>
+                        <option value="Laminate Finish">Laminate Finish</option>
+                        <option value="Natural Wood Finish">Natural Wood Finish</option>
+                        <option value="No Finishing">No Finishing</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+            </fieldset>
+
+            <!-- ADDITIONAL REQUIREMENTS -->
+            <fieldset>
+
+                <legend>Additional Requirements</legend>
+
+                <div class="form-group">
+                    <label for="description">Project Description</label>
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        rows="5"
+                        placeholder="Describe your furniture design, color, storage requirements, and other details..."
+                        required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="referenceImage">
+                        Upload Reference Image (Optional)
+                    </label>
+
+                    <input
+                        type="file"
+                        id="referenceImage"
+                        name="referenceImage"
+                        accept="image/*">
+
+                    <small>
+                        Upload an image of your desired furniture design.
+                    </small>
+                </div>
+
+            </fieldset>
+
+            <!-- SUBMIT BUTTON -->
+            <div class="form-buttons">
+
+                <button type="reset" class="reset-btn">
+                    Clear Form
+                </button>
+
+                <button type="submit" class="submit-btn">
+                    Submit Project
+                </button>
+
+            </div>
+
+        </form>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <h3>CRAFTORA</h3>
+        <p>Your Style, Our Commitment.</p>
+        <p>&copy; 2026 CRAFTORA. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Link JavaScript -->
+    <script src="../javascript/form.js"></script>
+
+</body>
+</html>
+
