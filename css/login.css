@@ -1,0 +1,284 @@
+
+/* GENERAL STYLING */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F7F6F1;
+    color: #172D27;
+    line-height: 1.6;
+}
+
+
+/* HEADER */
+
+.header {
+    background-color: #172D27;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #D69B62;
+}
+
+.logo small {
+    display: block;
+    font-size: 11px;
+    font-weight: normal;
+    color: #E8F0EB;
+}
+
+.home-link {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.home-link:hover {
+    color: #D69B62;
+}
+
+
+/* LOGIN CONTAINER */
+
+.login-container {
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+
+/* LOGIN BOX */
+
+.login-box {
+    background-color: white;
+    width: 100%;
+    max-width: 450px;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.login-box h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+
+/* USER TYPE */
+
+.user-type {
+    display: flex;
+    background-color: #E8F0EB;
+    padding: 5px;
+    border-radius: 7px;
+    margin-bottom: 25px;
+}
+
+.role-btn {
+    width: 50%;
+    padding: 11px;
+    border: none;
+    background: transparent;
+    color: #172D27;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.role-btn.active {
+    background-color: #24734E;
+    color: white;
+}
+
+
+/* FORM */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #24734E;
+}
+
+
+/* PASSWORD BOX */
+
+.password-box {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.password-box:focus-within {
+    border-color: #24734E;
+}
+
+.password-box input {
+    border: none;
+    border-radius: 0;
+}
+
+.password-box input:focus {
+    border: none;
+}
+
+.password-box button {
+    background-color: white;
+    border: none;
+    padding: 0 12px;
+    color: #24734E;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+/* FORM OPTIONS */
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.form-options a,
+.signup-link a {
+    color: #24734E;
+    text-decoration: none;
+}
+
+.form-options a:hover,
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* LOGIN BUTTON */
+
+.login-btn {
+    width: 100%;
+    background-color: #24734E;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 13px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: #172D27;
+}
+
+
+/* MESSAGE */
+
+.message {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 15px;
+    color: #24734E;
+}
+
+
+/* SIGNUP LINK */
+
+.signup-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: #172D27;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+footer h2 {
+    margin-bottom: 8px;
+}
+
+footer p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 500px) {
+
+    .header {
+        padding: 15px 5%;
+    }
+
+    .login-box {
+        padding: 25px 20px;
+    }
+
+    .login-box h1 {
+        font-size: 24px;
+    }
+
+    .form-options {
+        flex-wrap: wrap;
+    }
+
+}
